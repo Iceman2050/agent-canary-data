@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-canary-data"
+version = "0.1.0"
+description = "Canary data as the agent-authorization tripwire — plant fake records no agent should touch; any read proves AUTHORIZATION EXCEEDED."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+canary = "canary.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["canary*"]
